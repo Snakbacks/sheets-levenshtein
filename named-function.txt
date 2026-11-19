@@ -1,0 +1,1 @@
+=LET(a,LOWER(text1),b,LOWER(text2),m,LEN(a),n,LEN(b),IF(m=0,n,IF(n=0,m,INDEX(REDUCE(SEQUENCE(1,n+1,0),SEQUENCE(m),LAMBDA(prev,i,SCAN(i,SEQUENCE(1,n+1,0),LAMBDA(left,j,IF(j=0,i,MIN(INDEX(prev,1,j+1)+1,left+1,INDEX(prev,1,j)+(MID(a,i,1)<>MID(b,j,1)))))))),1,n+1))))
